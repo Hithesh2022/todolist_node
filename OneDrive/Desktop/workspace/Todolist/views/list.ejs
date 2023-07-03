@@ -2,15 +2,30 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <title>To Do List</title>
 </head>
 <body>
-    <%if (kindofday === "Saturday" || kindofday ==="Sunday") {%>
-        <h1 style="color: purple"><%= kindofday %> ToDo List</h1>
-        
-       <%} else {%>
-        <h1 style="color: blue"><%= kindofday %> ToDo List</h1>
-       <% }%>
+    <div class="box" id="heading">
+        <h1 ><%= kindofday %> ToDo List</h1>
+       
+
+       </div>
+       <div class="box">
+        <%for(let i=0; i<newlistitems.length;i++) { %>
+            <div class="item">
+                <input type ="checkbox">
+                <p><%= newlistitems[i] %></p>
+               
+            </div>
+            <% }%>
+            <form  class="item"action="/" method="post">
+                <input type="text" name="newitem" placeholder="NEW ITEM" autocomplete="off">
+                <button  type="submit" name="button">+</button>
+            </form>
+       </div>
+
+
 
 
 </body>
