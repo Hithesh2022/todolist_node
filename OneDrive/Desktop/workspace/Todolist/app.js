@@ -1,7 +1,7 @@
 const express=require("express");
 const body=require("body-parser");
 const app=express();
-let items=["buy food","cook","Eat food"];
+let items=["buy book","cook","sing ssong"];
 app.set('view engine',"ejs");
 app.use(express.static('public'));
 app.use(body.urlencoded({extended:true}));
